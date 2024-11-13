@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Jugador : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Mover()
     {
-        
+        transform.Translate(Vector3.forward * Time.deltaTime * 5);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void salto()
     {
-        
+        GetComponent<Rigidbody>().AddForce(Vector3.up * 5, ForceMode.Impulse);
     }
+
+    public void atacar()
+    {
+        Debug.Log("el jugador esta atacando");
+    }
+
 }
