@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class Jugador : MonoBehaviour
 {
-    public void Mover()
+    public float velocidad = 10f;
+    public void Mover(Vector3 direccion)
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * 5);
+        Debug.Log("el jugador esta moviendose");
+        transform.Translate(direccion * velocidad* Time.deltaTime);
     }
 
     public void Saltar()
     {
+        Debug.Log("el jugador esta saltando");
         GetComponent<Rigidbody>().AddForce(Vector3.up * 5, ForceMode.Impulse);
     }
 
